@@ -1,6 +1,6 @@
 # Test of Time: Code for Project Website
 
-This is the repository that contains source code for the [project website](https://bpiyush.github.io/pouring-water) for our paper: [The Sound of Water: Inferring Physical Properties from Pouring Liquids](.).
+This is the repository that contains source code for the [project website](https://bpiyush.github.io/pouring-water-website/) for our paper: [The Sound of Water: Inferring Physical Properties from Pouring Liquids](.).
 
 
 # Website License
