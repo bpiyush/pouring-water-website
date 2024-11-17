@@ -118,7 +118,7 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -126,7 +126,7 @@
                   </span>
                   <span>Camera-ready</span>
                 </a>
-              </span>
+              </span> -->
               <span class="link-block">
                 <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
@@ -149,7 +149,7 @@
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="#"
+                <a href="https://github.com/bpiyush/SoundOfWater"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -158,7 +158,7 @@
                   </a>
               </span>
               <span class="link-block">
-                <a href="#"
+                <a href="https://huggingface.co/datasets/bpiyush/sound-of-water"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-database"></i>
@@ -166,7 +166,7 @@
                   <span>Data</span>
                   </a>
               </span>
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -174,9 +174,9 @@
                   </span>
                   <span>Poster</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Video Link. -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="#"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -184,7 +184,7 @@
                     </span>
                     <span>Video</span>
                   </a>
-                </span>  
+                </span>   -->
                 <span class="link-block">
                   <a href="#"
                      class="external-link button is-normal is-rounded is-dark">
@@ -208,13 +208,95 @@
     <div class="hero-body">
       <!-- <img src="./media/teaser-v1-2x.gif" alt="drawing" style="width:100%;"/> -->
       <p align="center">
-        <img src="./media/tact-video-v2-small-v1.gif" alt="drawing" style="width:80%;"/>
+        <img src="./assets/pitch_on_spectrogram-compressed-ezgif.com-loop-count100.gif" alt="drawing" style="width:100%;"/>
       <br>
       <!-- <br> -->
-      <h2 class="subtitle has-text-centered">
-        Given only the sound of pouring liquid in a container, we want to infer physical properties such
-        as the liquid height, container size/shape, time to fill, etc.
-      </h2>
+      <div style="text-align: justify">
+      <span>
+        <b>The key nugget</b>: As water is poured, the fundamental frequency (in <span style="color:limegreen;">green</span>) 
+        that we hear changes predictably over time as a function of physical properties (e.g., container dimensions). 
+        We exploit this insight to (i) detect pitch in the audio signal, and (ii) infer physical
+        properties of the pouring action.
+      </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">🔭 Quick Preview</h2>
+        <div class="content has-text-justified">
+          <ul style="font-size: medium; margin: 5px;">
+            <li>
+              <strong>The physics of liquid pouring.</strong>
+              We show that inferring the pitch of sound of pouring lets us infer physical properties of the container-liquid system.
+            </li>
+            <li>
+              <strong>Pitch detection without manual supervision.</strong>
+              We train <i>wav2vec2</i> model to detect pitch using supervision from (i) simulated data, (ii) co-supervision from visual stream.
+            </li>
+            <li>
+              <strong>What does this achieve?</strong>
+              We are able to estimate properties such as container height, radius, length of air column precisely.
+              We also generalise strongly to other datasets and samples from YouTube.
+            </li>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">⚛️ The Physics of Pouring</h2>
+        <span>
+          Have you ever wondered by we can still pouring water in a glass without spilling even in the dark?
+          It turns out that the sound of pouring water is intricately related to the height of water at a given time.
+        </span>
+        <p align="center">
+          <img src="./assets/teaser-v2-physics-ezgif.com-loop-count.gif" alt="drawing" style="width:100%;"/>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">🎼 Pitch Detection in Pouring Sounds</h2>
+        <span>
+          Okay, so how do we detect pitch in the sound of pouring water? We draw inspiration
+          from music literature and adapt `wav2vec2` model to detect pitch in the audio signal.
+        </span>
+        <p align="center">
+          <img src="./assets/teaser-v2-detect-pitch-ezgif.com-speed.gif" alt="drawing" style="width:100%;"/>
+        </p>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-four-fifths">
+        <span>
+          <b>But we do not have supervision. How should we train it?</b>
+          We use (i) simulated data, and (ii) co-supervision from visual stream to train the model.
+        </span>
+        <p align="center">
+          <img src="./assets/teaser-v2-losses.png" alt="drawing" style="width:100%;"/>
+        </p>  
+      </div>
     </div>
   </div>
 </section>
